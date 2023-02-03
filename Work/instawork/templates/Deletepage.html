@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team Managment</title>
+    {% load static %}
+    <link href="{% static 'Main.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" id="create-user" class="btn btn-primary">Save</button>
+    </form>
+</body>
+</body>
+
+</html>

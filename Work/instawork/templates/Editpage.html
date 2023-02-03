@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team Managment</title>
+    {% load static %}
+    <link href="{% static 'Main.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <form method="post" action="">
+        {% csrf_token %}
+        <h2>Edit team member</h2>
+        <h4>Edit contact info, and role.</h4>
+
+        <ul>
+            <li id="name"><input type="text" name="fname" value="Bob" maxlength="100" required="" id="id_fname">
+            </li>
+            <li id="name"><input type="text" name="lname" value="Cheng" maxlength="100" required="" id="id_lname">
+            </li>
+            <li id="name"><input type="text" name="email" value="frefer" maxlength="100" required="" id="id_email">
+            </li>
+            <li id="name"><input type="text" name="phone" value="frefer" maxlength="12" required="" id="id_phone">
+            </li>
+            <li id="name">
+                <label>Regular - Can't delete Members</label>
+                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Regular">
+            </li>
+            <li id="name">
+                <label>Admin - Can delete members</label>
+                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Admin"
+                    checked="checked">
+            </li>
+            <!-- {{form}} -->
+        </ul>
+        <button type="submit" id="create-user" class="btn btn-primary">Save</button>
+    </form>
+
+    <form method="get" action="{% url 'team_member_delete' request.GET.pk %}">
+        {% csrf_token %}
+        <button type="submit" id="delete-user" class="btn btn-primary">Delete</button>
+    </form>
+</body>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team Managment</title>
+    {% load static %}
+    <link href="{% static 'Main.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <h2 id="plus"></h2><br>
+    <h1>Team Members</h1>
+    <p>You have {{ team_members.count|add:"-1" }} team members</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+        {% for team_member in team_members %}
+        {% if team_member.role == "Admin" %}
+        <tr>
+            <td><a href="{% url 'team_member_edit' team_member.pk %}">{{ team_member.name }} NAMA</a>(Admin)</td>
+            <td>{{ team_member.role }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td><a href="{% url 'team_member_edit' team_member.pk %}">{{ team_member.name }} </a></td>
+            <td>{{ team_member.role }}</td>
+            <td>{{ team_member.role }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    <a href="{% url 'team_member_add' %}">Add a new team member</a>
+
+</body>
+
+</html>

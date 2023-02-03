@@ -1,0 +1,18 @@
+body {
+    max-width: 20%;
+    margin: auto;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+form {
+    display: inline-block;
+}
+
+#plus:after {
+    content: ' \002B';
+    float: right;
+}
