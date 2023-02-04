@@ -13,8 +13,8 @@
 
     <form method="post" action="">
         {% csrf_token %}
-        <h2>Add a team member</h2>
-        <h4>Set email, phone number and role.</h4>
+        <h2 class="home-header">Add a team member</h2>
+        <h4 class="below-header">Set email, phone number and role.</h4>
         <ul>
             <li id="name"><input type="text" name="fname" maxlength="100" required="" id="id_fname"
                     placeholder="First Name"></li>
@@ -26,7 +26,8 @@
                     placeholder="Phone Number"></li>
             <li id="name">
                 <label>Regular - Can't delete Members</label>
-                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Regular">
+                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Regular"
+                    checked="checked">
             </li>
             <li id="name">
                 <label>Admin - Can delete members</label>

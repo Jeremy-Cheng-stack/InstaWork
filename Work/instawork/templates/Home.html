@@ -11,30 +11,51 @@
 </head>
 
 <body>
-    <h2 id="plus"></h2><br>
-    <h1>Team Members</h1>
-    <p>You have {{ team_members.count|add:"-1" }} team members</p>
+    <a href="{% url 'team_member_add' %}">
+        <h2 id="plus"></h2>
+    </a>
+    <br>
+    <h1 class="home-header">Team Members</h1>
+    <p class="below-header">You have {{ team_members.count }} team members</p>
+    <hr>
     <table>
-        <tr>
-            <th>Name</th>
-            <th>Role</th>
-        </tr>
         {% for team_member in team_members %}
         {% if team_member.role == "Admin" %}
-        <tr>
-            <td><a href="{% url 'team_member_edit' team_member.pk %}">{{ team_member.name }} NAMA</a>(Admin)</td>
-            <td>{{ team_member.role }}</td>
-        </tr>
+        <div>
+            <div class="info">
+                <img src="{% static 'user.png' %}" alt="Admin" width="50" height="50">
+                <div>
+                    <a href="{% url 'team_member_edit' team_member.pk %}">{{ team_member.fname }}
+                        {{ team_member.lname}}
+                    </a>(Admin)
+                    <br>
+                    {{ team_member.phone}}
+                    <br>
+                    {{ team_member.email}}
+                </div>
+            </div>
+            <hr>
+        </div>
         {% else %}
-        <tr>
-            <td><a href="{% url 'team_member_edit' team_member.pk %}">{{ team_member.name }} </a></td>
-            <td>{{ team_member.role }}</td>
-            <td>{{ team_member.role }}</td>
-        </tr>
+        <div>
+            <div class="info">
+                <img src="{% static 'user.png' %}" alt="Admin" width="50" height="50">
+                <div>
+                    <a href="{% url 'team_member_edit' team_member.pk %}">{{ team_member.fname }}
+                        {{ team_member.lname}}
+                    </a>
+
+                    <br>
+                    {{ team_member.phone}}
+                    <br>
+                    {{ team_member.email}}
+                </div>
+            </div>
+            <hr>
+        </div>
         {% endif %}
         {% endfor %}
     </table>
-    <a href="{% url 'team_member_add' %}">Add a new team member</a>
 
 </body>
 

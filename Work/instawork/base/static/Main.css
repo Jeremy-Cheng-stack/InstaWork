@@ -1,6 +1,7 @@
 body {
     max-width: 20%;
     margin: auto;
+
 }
 
 
@@ -15,4 +16,37 @@ form {
 #plus:after {
     content: ' \002B';
     float: right;
+    color: #0060B6;
+}
+
+.info {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    color: #0060B6;
+}
+
+.below-header {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.home-header {
+    margin-bottom: 0px;
+}
+
+#edit-user {
+    float: right;
+}
+
+#create-user {
+    float: right;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        max-width: 100%;
+    }
 }

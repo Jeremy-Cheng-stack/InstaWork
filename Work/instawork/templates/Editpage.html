@@ -13,33 +13,37 @@
 <body>
     <form method="post" action="">
         {% csrf_token %}
-        <h2>Edit team member</h2>
-        <h4>Edit contact info, and role.</h4>
+        <h2 class="home-header">Edit team member</h2>
+        <h4 class="below-header">Edit contact info, and role.</h4>
 
         <ul>
-            <li id="name"><input type="text" name="fname" value="Bob" maxlength="100" required="" id="id_fname">
+            <li id="name"><input type="text" name="fname" value={{form.fname.value}} maxlength="100" required=""
+                    id="id_fname" placeholder="First Name">
             </li>
-            <li id="name"><input type="text" name="lname" value="Cheng" maxlength="100" required="" id="id_lname">
+            <li id="name"><input type="text" name="lname" value={{form.lname.value}} maxlength="100" required=""
+                    id="id_lname" placeholder="Last Name">
             </li>
-            <li id="name"><input type="text" name="email" value="frefer" maxlength="100" required="" id="id_email">
+            <li id="name"><input type="text" name="email" value={{form.email.value}} maxlength="100" required=""
+                    id="id_email" placeholder="Email">
             </li>
-            <li id="name"><input type="text" name="phone" value="frefer" maxlength="12" required="" id="id_phone">
+            <li id="name"><input type="text" name="phone" value={{form.phone.value}} maxlength="12" required=""
+                    id="id_phone" placeholder="Phone Number">
             </li>
             <li id="name">
                 <label>Regular - Can't delete Members</label>
-                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Regular">
+                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Regular"
+                    checked="checked">
             </li>
             <li id="name">
                 <label>Admin - Can delete members</label>
-                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Admin"
-                    checked="checked">
+                <input type="radio" name="role" maxlength="100" required="" id="id_role" value="Admin">
             </li>
-            <!-- {{form}} -->
+            <!-- {{form}} {{form.instance.id}}-->
         </ul>
-        <button type="submit" id="create-user" class="btn btn-primary">Save</button>
+        <button type="submit" id="edit-user" class="btn btn-primary">Save</button>
     </form>
 
-    <form method="get" action="{% url 'team_member_delete' request.GET.pk %}">
+    <form method="get" action="{% url 'team_member_delete' form.instance.id %}">
         {% csrf_token %}
         <button type="submit" id="delete-user" class="btn btn-primary">Delete</button>
     </form>
