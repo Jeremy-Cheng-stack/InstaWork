@@ -29,7 +29,7 @@ Delete screen after delete button is clicked: <br/>
 * "/add" Page to add member
 * "/<int:pk>/edit/" Page to edit a member with id pk
 * "<int:pk>/delete/" Page to delete a member with id pk
-<br/>
+
 ### Note
 * Data is stored on sqlite3 which can be accessed through the endpoint "/admin"
 * The edit person page can be accessed by clicking on a person's name
