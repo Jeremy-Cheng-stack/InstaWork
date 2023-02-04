@@ -27,3 +27,4 @@ Delete screen after delete button is clicked: <br/>
 * Data is stored on sqlite3 which can be accessed through /admin/
 * The edit person page can be accessed by clicking on a person's name
 * Best result page can be seen with 1440px screen or greater, but of course it works with any screen size
+* Estimated time spend: 4h
