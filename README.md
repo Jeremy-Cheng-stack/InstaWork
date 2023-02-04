@@ -23,8 +23,15 @@ Edit a team member from the list:<br/>
 <img width="335" alt="Screen Shot 2023-02-03 at 10 17 40 PM" src="https://user-images.githubusercontent.com/81793294/216745340-7cb9809c-1dde-4e87-9e64-479e56d34e1b.png"><br/>
 Delete screen after delete button is clicked: <br/>
 <img width="330" alt="Screen Shot 2023-02-03 at 10 17 49 PM" src="https://user-images.githubusercontent.com/81793294/216745344-c49783b4-ac67-41d0-b44a-c7a048d9d06c.png"><br/><br/>
+
+### Endpoints
+* "/" Home screen
+* "/add" Page to add member
+* "/<int:pk>/edit/" Page to edit a member with id pk
+* "<int:pk>/delete/" Page to delete a member with id pk
+<br/>
 ### Note
-* Data is stored on sqlite3 which can be accessed through /admin/
+* Data is stored on sqlite3 which can be accessed through the endpoint "/admin"
 * The edit person page can be accessed by clicking on a person's name
 * Best result page can be seen with 1440px screen or greater, but of course it works with any screen size
 * Estimated time spend: 4h
