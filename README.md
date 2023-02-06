@@ -10,7 +10,7 @@ Have pipenv installed first <br/>
 Then you can work in the virtual environment through the following command inside the work folder:<br/>
 `pipenv shell`.
 <br/><br/>
-Once the vm is setup, you can start the server through the command: <br/>`python3 manage.py runserver`
+Once the vm is setup, you can start the server in Work/instawork folder through the command: <br/>`python3 manage.py runserver`
 <br/>
 ## Testing
 Here are some screenshots of what the application looks like.
